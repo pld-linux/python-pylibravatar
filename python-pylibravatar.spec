@@ -9,16 +9,14 @@
 %define		pypi_name	pyLibravatar
 Summary:	Python module for Libravatar
 Name:		python-pylibravatar
-Version:	1.6
-Release:	2
+Version:	1.7
+Release:	1
 Group:		Development/Libraries
 # The full text of the license isn't shipped
+# https://bugs.launchpad.net/pylibravatar/+bug/1173603
 License:	MIT
 Source0:	http://pypi.python.org/packages/source/p/%{egg_name}/%{egg_name}-%{version}.tar.gz
-# Source0-md5:	41b4d3aee39fb4656ee156e0dac18e73
-# https://code.launchpad.net/~ralph-bean/pylibravatar/tcp-dns/+merge/263157
-Patch0:		%{name}-dns-srv-tcp.patch
-# https://bugs.launchpad.net/pylibravatar/+bug/1173603
+# Source0-md5:	b612f6d8caf4194bdd735d68d23fe5ee
 URL:		http://pypi.python.org/pypi/pyLibravatar
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -55,7 +53,6 @@ avatar hosting service from within your Python applications.
 
 %prep
 %setup -q -n %{egg_name}-%{version}
-%patch0
 
 # Correct wrong-file-end-of-line-encoding rpmlint issue
 sed -i 's/\r//' README.txt
