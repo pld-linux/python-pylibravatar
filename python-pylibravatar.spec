@@ -10,7 +10,7 @@
 Summary:	Python module for Libravatar
 Name:		python-pylibravatar
 Version:	1.6
-Release:	1
+Release:	2
 Group:		Development/Libraries
 # The full text of the license isn't shipped
 License:	MIT
@@ -83,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%if %{with python3}
+%if %{with python2}
 %files
 %defattr(644,root,root,755)
 # Upstream doesn't ship the license full text
